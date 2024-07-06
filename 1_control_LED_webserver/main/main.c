@@ -139,7 +139,7 @@ void app_main(void)
 {
   ESP_ERROR_CHECK(nvs_flash_init());
   wifi_init();  
-  ESP_ERROR_CHECK(wifi_connect_sta("XC", "khtcmntvc1nv", 10000));
+  ESP_ERROR_CHECK(wifi_connect_sta("HHV-WIFI", "hhv2023#", 10000));
   
   configure_led();
   start_webserver();
