@@ -1098,3 +1098,5 @@
 26	125	7419415912681762	D:/Github/practice_esp_idf/1_control_LED_webserver/build/bootloader/bootloader.elf	fba6798bacbb430b
 26	125	7419415912681762	D:/Github/practice_esp_idf/1_control_LED_webserver/build/bootloader/bootloader.bin	fba6798bacbb430b
 26	125	7419415912681762	D:/Github/practice_esp_idf/1_control_LED_webserver/build/bootloader/bootloader.map	fba6798bacbb430b
+125	16214	0	CMakeFiles/flash	608b5531c86ed81e
+125	16214	0	D:/Github/practice_esp_idf/1_control_LED_webserver/build/CMakeFiles/flash	608b5531c86ed81e
