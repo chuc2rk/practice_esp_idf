@@ -9,7 +9,7 @@
 #define RTS_PIN (GPIO_NUM_10)
 #define BAUD_RATE 9600
 
-static const char *TAG = "MODBUS_MASTER";
+static const char *TAG = "4_RELAY_MODBUS";
 
 void uart_init() {
     const uart_config_t uart_config = {
