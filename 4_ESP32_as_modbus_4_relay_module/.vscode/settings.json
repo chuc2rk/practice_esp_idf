@@ -12,6 +12,7 @@
     "bmp280.h": "c",
     "modbus_4relay.h": "c",
     "stdio.h": "c",
-    "esp_log.h": "c"
+    "esp_log.h": "c",
+    "nvs_flash.h": "c"
   }
 }
