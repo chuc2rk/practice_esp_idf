@@ -429,10 +429,7 @@ uint8_t read_optocoupler_status(void)
 void set_baud_rate(uint8_t baud_rate_code)
 {
     uint32_t new_baud_rate;
-    switch (baud_rate_code) {
-        case 0x02:
-            new_baud_rate = 4800;
-            break;
+    switch (baud_rate_code) {       
         case 0x03:
             new_baud_rate = 9600;
             break;
