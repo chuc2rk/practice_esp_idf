@@ -66,9 +66,27 @@ static void got_ip_event_handler(void *event_handler_arg, esp_event_base_t event
 
 void app_main (void)
 {
-    // Initialize TCP/IP network interface (should be called only once in application)
+    /* 
+     * Purpose: This function initializes the TCP/IP network interface for the ESP32. 
+     * In simpler terms, it sets up the networking stack so that the ESP32 can communicate over network protocols like Wi-Fi, Ethernet, etc.
+     * Why it's needed: Before any network communication can occur (like connecting to a Wi-Fi network or sending/receiving data over the network), 
+     * the underlying networking subsystem needs to be initialized. 
+     * This function ensures that all necessary networking components are ready to use.
+     * Why it's needed: Before any network communication can occur (like connecting to a Wi-Fi network or sending/receiving data over the network), 
+     * the underlying networking subsystem needs to be initialized. 
+     * This function ensures that all necessary networking components are ready to use.
+     * */
     ESP_ERROR_CHECK(esp_netif_init());
-    // Create default event loop that running in background
+
+    /*
+     * Purpose: This function creates a default event loop that runs in the background. 
+     * An event loop is responsible for handling and dispatching events, 
+     * such as network status changes, timers, or custom application events.
+     * Why it's needed: In ESP-IDF, events are a common way to handle asynchronous operations. 
+     * For example, when the ESP32 connects to a Wi-Fi network, 
+     * an event is triggered to notify the application. 
+     * The default event loop manages these events, ensuring they are processed appropriately without blocking other tasks.
+     */
     ESP_ERROR_CHECK(esp_event_loop_create_default());   
 
 
