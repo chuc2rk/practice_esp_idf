@@ -9,8 +9,7 @@
                 "${config:idf.espIdfPathWin}/components/**",
                 "${config:idf.espAdfPath}/components/**",
                 "${config:idf.espAdfPathWin}/components/**",
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/components/modbus_4relay"
+                "${workspaceFolder}/**"
             ],
             "browse": {
                 "path": [

@@ -8,13 +8,20 @@
 #include "esp_log.h"
 #include "driver/gpio.h"
 #include "sdkconfig.h"
+#include "lan8720.h"
+#include "freertos/event_groups.h"
 
 
-static const char *TAG ="ethernet";
+static const char *TAG ="ETHERNET";
 #define ETH_PHY_ADDR             1
 #define ETH_PHY_RST_GPIO        -1          // not connected
 #define ETH_MDC_GPIO            23
 #define ETH_MDIO_GPIO           18
+
+// Event group handle and event bits
+static EventGroupHandle_t eth_event_group;
+const int ETH_CONNECTED_BIT = BIT0;
+const int ETH_DISCONNECTED_BIT = BIT1;
 
 /** Event handler for Ethernet events */
 static void eth_event_handler(void *event_handler_arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
@@ -35,7 +42,9 @@ static void eth_event_handler(void *event_handler_arg, esp_event_base_t event_ba
 
     case ETHERNET_EVENT_DISCONNECTED:
         ESP_LOGI(TAG, "Ethernet Link Down");
+        xEventGroupSetBits(eth_event_group, ETH_DISCONNECTED_BIT);
         break;
+
 
     case ETHERNET_EVENT_START:
         ESP_LOGI(TAG, "Ethernet Started");
@@ -62,10 +71,15 @@ static void got_ip_event_handler(void *event_handler_arg, esp_event_base_t event
     ESP_LOGI(TAG, "ETHMASK:" IPSTR, IP2STR(&ip_info->netmask));
     ESP_LOGI(TAG, "ETHGW:" IPSTR, IP2STR(&ip_info->gw));
     ESP_LOGI(TAG, "~~~~~~~~~~~");
+
+    xEventGroupSetBits(eth_event_group, ETH_CONNECTED_BIT);
 }
 
-void app_main (void)
+esp_err_t ethernet (int timeout)
 {
+    
+    eth_event_group = xEventGroupCreate();
+
     /* 
      * Purpose: This function initializes the TCP/IP network interface for the ESP32. 
      * In simpler terms, it sets up the networking stack so that the ESP32 can communicate over network protocols like Wi-Fi, Ethernet, etc.
@@ -148,4 +162,23 @@ void app_main (void)
     ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_ETH_GOT_IP, &got_ip_event_handler, NULL));
     // start Ethernet driver state machine
     ESP_ERROR_CHECK(esp_eth_start(eth_handle));
+
+    // Wait for either connected or disconnected events
+    EventBits_t result = xEventGroupWaitBits(eth_event_group, ETH_CONNECTED_BIT | ETH_DISCONNECTED_BIT,
+                                             pdTRUE, pdFALSE, pdMS_TO_TICKS(timeout));
+    
+    if (result & ETH_CONNECTED_BIT) {
+        ESP_LOGI(TAG, "Ethernet connected.");
+        return ESP_OK;
+    } else if (result & ETH_DISCONNECTED_BIT) {
+        ESP_LOGI(TAG, "Ethernet disconnected during wait.");
+        // Handle disconnection case if needed
+    } else {
+        ESP_LOGW(TAG, "Ethernet connection timed out, continuing without a link.");
+        // Proceed without a connection or handle this case as needed
+        // For example, return ESP_OK instead of ESP_FAIL to avoid triggering an error
+        return ESP_OK;  // Change this to ESP_FAIL if strict connection is required
+    }
+
+    return ESP_OK;
 }

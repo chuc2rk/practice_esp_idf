@@ -3,6 +3,8 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := ethernet_basic
+PROJECT_NAME := tcp_server
+
+EXTRA_COMPONENT_DIRS = $(IDF_PATH)/examples/common_components/protocol_examples_common
 
 include $(IDF_PATH)/make/project.mk
