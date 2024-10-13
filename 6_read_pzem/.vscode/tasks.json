@@ -236,14 +236,13 @@
         "-e",
         "${workspaceFolder}/build/${command:espIdf.getProjectName}.elf",
         "-s",
-        "$OPENOCD_SCRIPTS",
+        "${command:espIdf.getOpenOcdScriptValue}",
+        "-ip",
+        "localhost",
         "-dn",
-        "esp32",
+        "${config:idf.adapterTargetName}",
         "-om",
-        "connect_to_instance",
-        "-t",
-        "xtensa-esp32-elf-"
-
+        "connect_to_instance"
       ],
       "windows": {
         "command": "${config:idf.pythonBinPathWin}",
