@@ -6,7 +6,7 @@
 
   How to Solve: Allocate memory dynamically for variable-length data, and pass a pointer through the queue. 
   Once the task processes the data, it must free the memory to avoid memory overflows. 
-  This allows flexible data handling, such as sending messages, HTTP requests, or formatted data.
+  This allows flexible data handling, such as sending messages, HTTP requests, or formatted data..
 */
 
 
