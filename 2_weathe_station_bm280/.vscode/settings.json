@@ -9,6 +9,7 @@
     "led_strip.h": "c",
     "freertos.h": "c",
     "string.h": "c",
-    "bmp280.h": "c"
+    "bmp280.h": "c",
+    "queue.h": "c"
   }
 }
