@@ -1,21 +1,22 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
     "idf.adapterTargetName": "esp32",
-    "idf.customExtraPaths": "c:\\Users\\chuc2\\.espressif\\tools\\xtensa-esp-elf-gdb\\11.2_20220823\\xtensa-esp-elf-gdb\\bin;c:\\Users\\chuc2\\.espressif\\tools\\riscv32-esp-elf-gdb\\11.2_20220823\\riscv32-esp-elf-gdb\\bin;c:\\Users\\chuc2\\.espressif\\tools\\xtensa-esp32-elf\\esp-2021r2-patch5-8.4.0\\xtensa-esp32-elf\\bin;c:\\Users\\chuc2\\.espressif\\tools\\xtensa-esp32s2-elf\\esp-2021r2-patch5-8.4.0\\xtensa-esp32s2-elf\\bin;c:\\Users\\chuc2\\.espressif\\tools\\xtensa-esp32s3-elf\\esp-2021r2-patch5-8.4.0\\xtensa-esp32s3-elf\\bin;c:\\Users\\chuc2\\.espressif\\tools\\riscv32-esp-elf\\esp-2021r2-patch5-8.4.0\\riscv32-esp-elf\\bin;c:\\Users\\chuc2\\.espressif\\tools\\esp32ulp-elf\\2.35_20220830\\esp32ulp-elf\\bin;c:\\Users\\chuc2\\.espressif\\tools\\cmake\\3.23.1\\bin;c:\\Users\\chuc2\\.espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20230419\\openocd-esp32\\bin;c:\\Users\\chuc2\\.espressif\\tools\\ninja\\1.10.2;c:\\Users\\chuc2\\.espressif\\tools\\idf-exe\\1.0.3;c:\\Users\\chuc2\\.espressif\\tools\\ccache\\4.3\\ccache-4.3-windows-64;c:\\Users\\chuc2\\.espressif\\tools\\dfu-util\\0.9\\dfu-util-0.9-win64",
+    "idf.customExtraPaths": "C:\\Espressif\\tools\\xtensa-esp-elf-gdb\\11.2_20220823\\xtensa-esp-elf-gdb\\bin;C:\\Espressif\\tools\\riscv32-esp-elf-gdb\\11.2_20220823\\riscv32-esp-elf-gdb\\bin;C:\\Espressif\\tools\\xtensa-esp32-elf\\esp-2021r2-patch5-8.4.0\\xtensa-esp32-elf\\bin;C:\\Espressif\\tools\\xtensa-esp32s2-elf\\esp-2021r2-patch5-8.4.0\\xtensa-esp32s2-elf\\bin;C:\\Espressif\\tools\\xtensa-esp32s3-elf\\esp-2021r2-patch5-8.4.0\\xtensa-esp32s3-elf\\bin;C:\\Espressif\\tools\\riscv32-esp-elf\\esp-2021r2-patch5-8.4.0\\riscv32-esp-elf\\bin;C:\\Espressif\\tools\\esp32ulp-elf\\2.35_20220830\\esp32ulp-elf\\bin;C:\\Espressif\\tools\\cmake\\3.23.1\\bin;C:\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20230921\\openocd-esp32\\bin;C:\\Espressif\\tools\\ninja\\1.10.2;C:\\Espressif\\tools\\idf-exe\\1.0.3;C:\\Espressif\\tools\\ccache\\4.3\\ccache-4.3-windows-64;C:\\Espressif\\tools\\dfu-util\\0.9\\dfu-util-0.9-win64",
     "idf.customExtraVars": {
-        "OPENOCD_SCRIPTS": "c:\\Users\\chuc2\\.espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20230419/openocd-esp32/share/openocd/scripts",
+        "OPENOCD_SCRIPTS": "C:\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20230921/openocd-esp32/share/openocd/scripts",
         "IDF_CCACHE_ENABLE": "1"
     },
-    "idf.espIdfPathWin": "C:/Espressif/frameworks/esp-idf-v4.4.6-2/",
+    "idf.espIdfPathWin": "C:/Espressif/frameworks/esp-idf-v4.4.7/",
     "idf.openOcdConfigs": [
         "board/esp32-wrover-kit-3.3v.cfg"
     ],
-    "idf.pythonBinPathWin": "c:\\Users\\chuc2\\.espressif\\python_env\\idf4.4_py3.8_env\\Scripts\\python.exe",
-    "idf.toolsPathWin": "c:\\Users\\chuc2\\.espressif",
+    "idf.pythonBinPathWin": "C:\\Espressif\\python_env\\idf4.4_py3.8_env\\Scripts\\python.exe",
+    "idf.toolsPathWin": "C:\\Espressif",
     "C_Cpp.dimInactiveRegions": false,
     "files.associations": {
         "modbus_params.h": "c",
         "sdkconfig.h": "c",
         "*.inc": "c"
-    }
+    },
+    "idf.gitPathWin": "C:/Espressif/tools/idf-git/2.43.0/cmd/git.exe"
 }
